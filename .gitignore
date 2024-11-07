@@ -1,0 +1,5 @@
+# igone .vscode file
+*.vscode
+
+# ignoe node moodues folder
+node_modules/

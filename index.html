@@ -6,7 +6,397 @@
     <link rel="stylesheet" href="./assets/css/styles.css" />
     <title>Struo CV</title>
   </head>
-  <body>
+  <body class="dark:bg-gray-900">
+    <form
+      class="max-w-xl w-lg mx-auto border-2 border-sky-500 p-5 flex flex-col gap-4"
+    >
+      <div id="personal-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Personal Informations
+        </h2>
+        <div class="name grid grid-cols-2 gap-3">
+          <div class="first-name">
+            <label
+              for="first-name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >First Name</label
+            >
+            <input
+              type="text"
+              id="first-name"
+              placeholder="First Name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+          <div class="last-name">
+            <label
+              for="last-name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Last Name</label
+            >
+            <input type="text" id="last-name" placeholder="Last Name"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+            rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
+            p-2.5 dark:bg-gray-700 dark:border-gray-600
+            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+            dark:focus:border-blue-500"">
+          </div>
+        </div>
+        <div class="job-title">
+          <label
+            for="job-title"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Job title</label
+          >
+          <input
+            type="text"
+            id="job-title"
+            aria-describedby="helper-text-explanation"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Job title"
+          />
+        </div>
+        <div class="image">
+          <label
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            for="file_input"
+            >Upload file</label
+          >
+          <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+          rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
+          p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500""
+          aria-describedby="file_input_help" id="file_input" type="file" />
+          <p
+            class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+            id="file_input_help"
+          >
+            SVG, PNG, JPG or GIF (MAX. 800x400px).
+          </p>
+        </div>
+      </div>
+
+      <div id="contact-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Contact Informations
+        </h2>
+        <div class="phone">
+          <label
+            for="phone-number"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Phone Number</label
+          >
+          <input
+            type="text"
+            id="phone-number"
+            placeholder="0xxxxxxx"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div class="email">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="email"
+            placeholder="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div class="social-links">
+          <label
+            for="github"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >GitHub</label
+          >
+          <input
+            type="text"
+            id="github"
+            placeholder="Type or paste URL"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <button
+          type="button"
+          class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          <img
+            src="./assets/images/plus.png"
+            alt="plus icon"
+            style="width: 25px; height: 25px"
+          />
+          <p class="text-white">Add links</p>
+        </button>
+      </div>
+
+      <div id="education-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Education Informations
+        </h2>
+        <div id="education1" class="flex flex-col gap-3">
+          <div class="school-degree-and-city flex justify-between gap-3">
+            <div class="flex-1">
+              <label
+                for="degree"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Degree</label
+              >
+              <input
+                type="date"
+                placeholder="e.g Master degree"
+                id="degree"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div class="flex-1">
+              <label
+                for="school-city"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >School City</label
+              >
+              <input
+                type="text"
+                id="school-city"
+                placeholder="e.g London"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+          </div>
+          <div class="school-name">
+            <label
+              for="school-name"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >School Name</label
+            >
+            <input
+              type="text"
+              id="school-name"
+              placeholder="eg. Havard university"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+          <div id="degree-date" class="flex justify-between gap-3">
+            <div id="start" class="flex-1">
+              <label
+                for="start-degree-date"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >Start Date</label
+              >
+              <input
+                type="date"
+                id="start-degree-date"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+            <div id="end" class="flex-1">
+              <label
+                for="end-degree-date"
+                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >End Date</label
+              >
+              <input
+                type="date"
+                id="end-degree-date"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              />
+            </div>
+          </div>
+          <label
+            for="degree-description"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Description</label
+          >
+          <textarea
+            name="description"
+            id="degree-description"
+            rows="5"
+            cols="10"
+            class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Write your thoughts here..."
+          ></textarea>
+          <button
+            type="button"
+            id="add-education"
+            class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+          >
+            <img
+              src="./assets/images/plus.png"
+              alt="plus icon"
+              style="width: 25px; height: 25px"
+            />
+            <p id="add-education-btn">Add Educations</p>
+          </button>
+        </div>
+      </div>
+
+      <div id="experience-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Job Informations
+        </h2>
+        <div>
+          <label
+            for="job-title"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Job title</label
+          >
+          <input
+            type="text"
+            id="job-title"
+            placeholder="eg. Software Engineer"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div>
+          <label
+            for="organization"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Organization</label
+          >
+          <input
+            type="text"
+            id="organization"
+            placeholder="eg. Google"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <div id="experience-period" class="flex justify-between gap-3">
+          <div class="flex-1">
+            <label
+              for="start-expt-date"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >Start Date</label
+            >
+            <input
+              type="date"
+              id="start-exp-date"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+          <div id="end" class="flex-1">
+            <label
+              for="end-exp-date"
+              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >End Date</label
+            >
+            <input
+              type="date"
+              id="end-exp-date"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            />
+          </div>
+        </div>
+        <label
+          for="exp-description"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Description</label
+        >
+        <textarea
+          name="description"
+          id="exp-description"
+          rows="5"
+          cols="10"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write your thoughts here..."
+        ></textarea>
+        <button
+          type="button"
+          id="add-exp-btn"
+          class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          <img
+            src="./assets/images/plus.png"
+            alt="plus icon"
+            style="width: 25px; height: 25px"
+          />
+          <p id="add-exp">Add Experience</p>
+        </button>
+      </div>
+
+      <div id="skills-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Skills
+        </h2>
+        <div>
+          <label
+            for="skill1"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Skill</label
+          >
+          <input
+            type="text"
+            id="skill1"
+            placeholder="eg. HTML, CSS ..."
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <button
+          type="button"
+          id="add-skill-btn"
+          class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          <img
+            src="./assets/images/plus.png"
+            alt="plus icon"
+            style="width: 25px; height: 25px"
+          />
+          <p id="add-skill">Add Skill</p>
+        </button>
+      </div>
+
+      <div id="summary-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Professional Summary
+        </h2>
+        <label
+          for="summary"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Description</label
+        >
+        <textarea
+          name="description"
+          id="summary"
+          rows="5"
+          cols="10"
+          class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Write your thoughts here..."
+        ></textarea>
+      </div>
+
+      <div id="languages-informations" class="flex flex-col gap-3">
+        <h2 class="text-lg text-white font-semibold text-center mb-3">
+          Languages
+        </h2>
+        <div id="language1" class="flex gap-3">
+          <input
+            type="text"
+            id="language1-name"
+            placeholder="Language"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+          <input
+            type="text"
+            id="language1-level"
+            placeholder="Level"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          />
+        </div>
+        <button
+          type="button"
+          id="add-language-btn"
+          class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+        >
+          <img
+            src="./assets/images/plus.png"
+            alt="plus icon"
+            style="width: 25px; height: 25px"
+          />
+          <p id="add-language">Add language</p>
+        </button>
+      </div>
+    </form>
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

@@ -22,6 +22,8 @@ prevBtns.forEach(btn => {
   })
 })
 
+/* Social links fileds (add and remove skill functions) */
+
 // Function to add a social link on contact information step.
 let linkCounter = 0;
 function addLinkField() {
@@ -52,4 +54,10 @@ function addLinkField() {
   linkContainer.appendChild(removeBtn);
 
   document.getElementById("social-links").appendChild(linkContainer);
+}
+
+// Function to remove skill
+function removeLink(id) {
+  const elem = document.getElementById(id);
+  if(elem) {elem.remove()}
 }

@@ -7,76 +7,86 @@
     <title>Struo CV</title>
   </head>
   <body class="dark:bg-gray-900">
-    <form
-      class="max-w-xl w-lg mx-auto border-2 border-sky-500 p-5 flex flex-col gap-4"
-    >
-      <div id="personal-informations" class="flex flex-col gap-3">
-        <h2 class="text-lg text-white font-semibold text-center mb-3">
-          Personal Informations
-        </h2>
-        <div class="name grid grid-cols-2 gap-3">
-          <div class="first-name">
-            <label
-              for="first-name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >First Name</label
-            >
-            <input
-              type="text"
-              id="first-name"
-              placeholder="First Name"
-              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            />
-          </div>
-          <div class="last-name">
-            <label
-              for="last-name"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >Last Name</label
-            >
-            <input type="text" id="last-name" placeholder="Last Name"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
-            rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
-            p-2.5 dark:bg-gray-700 dark:border-gray-600
-            dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-            dark:focus:border-blue-500"">
-          </div>
-        </div>
-        <div class="job-title">
+    <main>
+    <div class="container w-10/12 mx-auto border-2 border-sky-500 p-5 flex flex-col gap-4">
+    <form>
+    <div id="personal-informations" class="form-step flex flex-col gap-3">
+      <h2 class="text-lg text-white font-semibold text-center mb-3">
+        Personal Informations
+      </h2>
+      <div class="name grid grid-cols-2 gap-3">
+        <div>
           <label
-            for="job-title"
+            for="first-name"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Job title</label
+            >First Name</label
           >
           <input
             type="text"
-            id="job-title"
-            aria-describedby="helper-text-explanation"
+            id="first-name"
+            placeholder="First Name"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="Job title"
           />
         </div>
-        <div class="image">
+        <div>
           <label
+            for="last-name"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            for="file_input"
-            >Upload file</label
+            >Last Name</label
           >
-          <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
+          <input type="text" id="last-name" placeholder="Last Name"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
           rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full
-          p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500""
-          aria-describedby="file_input_help" id="file_input" type="file" />
-          <p
-            class="mt-1 text-sm text-gray-500 dark:text-gray-300"
-            id="file_input_help"
-          >
-            SVG, PNG, JPG or GIF (MAX. 800x400px).
-          </p>
+          p-2.5 dark:bg-gray-700 dark:border-gray-600
+          dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+          dark:focus:border-blue-500"">
         </div>
       </div>
+      <div>
+        <label
+          for="job-title"
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          >Job title</label
+        >
+        <input
+          type="text"
+          id="job-title"
+          aria-describedby="helper-text-explanation"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Job title"
+        />
+      </div>
 
-      <div id="contact-informations" class="flex flex-col gap-3">
+      <div class="image">
+        <label
+          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+          for="file-input"
+          >Upload file</label
+        >
+        <input class="bg-gray-50 border border-gray-300 text-gray-900
+        text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block
+        w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
+        dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+        dark:focus:border-blue-500"" aria-describedby="file_input_help"
+        id="file-input" type="file" />
+        <p
+          class="mt-1 text-sm text-gray-500 dark:text-gray-300"
+          id="file_input_help"
+        >
+          SVG, PNG, JPG or GIF (MAX. 800x400px).
+        </p>
+      </div>
+      <div class="btns mt-5 flex justify-center items-center">
+        <button
+          type="button"
+          class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+
+      <div id="contact-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Contact Informations
         </h2>
@@ -130,9 +140,23 @@
           />
           <p class="text-white">Add links</p>
         </button>
+        <div class="btns mt-5 flex justify-center items-center gap-4">
+          <button
+            type="button"
+            class="prev-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div id="education-informations" class="flex flex-col gap-3">
+      <div id="education-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Education Informations
         </h2>
@@ -230,9 +254,23 @@
             <p id="add-education-btn">Add Educations</p>
           </button>
         </div>
+        <div class="btns mt-5 flex justify-center items-center gap-4">
+          <button
+            type="button"
+            class="prev-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div id="experience-informations" class="flex flex-col gap-3">
+      <div id="experience-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Job Informations
         </h2>
@@ -313,9 +351,23 @@
           />
           <p id="add-exp">Add Experience</p>
         </button>
+        <div class="btns mt-5 flex justify-center items-center gap-4">
+          <button
+            type="button"
+            class="prev-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div id="skills-informations" class="flex flex-col gap-3">
+      <div id="skills-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Skills
         </h2>
@@ -344,9 +396,23 @@
           />
           <p id="add-skill">Add Skill</p>
         </button>
+        <div class="btns mt-5 flex justify-center items-center gap-4">
+          <button
+            type="button"
+            class="prev-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div id="summary-informations" class="flex flex-col gap-3">
+      <div id="summary-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Professional Summary
         </h2>
@@ -363,9 +429,23 @@
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Write your thoughts here..."
         ></textarea>
+        <div class="btns mt-5 flex justify-center items-center gap-4">
+          <button
+            type="button"
+            class="prev-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            class="next-btn w-[6rem] text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Next
+          </button>
+        </div>
       </div>
 
-      <div id="languages-informations" class="flex flex-col gap-3">
+      <div id="languages-informations" class="form-step hidden flex-col gap-3">
         <h2 class="text-lg text-white font-semibold text-center mb-3">
           Languages
         </h2>
@@ -395,8 +475,18 @@
           />
           <p id="add-language">Add language</p>
         </button>
+        <div class="btns mt-5 flex justify-center items-end gap-4">
+          <button
+            type="submit"
+            class="next-btn w-[10rem] h-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 self-end"
+          >
+            Submit
+          </button>
+        </div>
       </div>
     </form>
+    </div>
+  </main>
     <script src="./assets/js/index.js"></script>
   </body>
 </html>

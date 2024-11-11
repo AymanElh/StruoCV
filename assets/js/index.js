@@ -135,3 +135,47 @@ function removeEducation(id) {
   const field = document.getElementById(id);
   if(field) {field.remove()}
 }
+
+
+/* Skills */
+
+// Function to add skill 
+let skillCount = 0;
+function addSkill() {
+  skillCount++;
+
+  const skill = document.getElementById("skill");
+  if(!skill.value) {
+    alert("Please filll the inputs");
+    return;
+  }
+
+  const skillItem = document.createElement("div")
+  skillItem.id = `skill${skillCount}`;
+  skillItem.classList.add("flex", "items-center", "max-w-[12rem]", "p-4", "text-gray", "bg-gray-800", "rounded-lg", "shadow", "text-sky-400", "text-xl");
+  skillItem.innerHTML = `
+    <div class="text-sm font-semibold mr-2" id="skill-name-${skillCount}">
+       ${skill.value}
+    </div>
+    <div class="flex items-center ms-auto space-x-2 rtl:space-x-reverse">
+      <button onclick="removeSkill(${skillItem.id})" type="button" class="ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 focus:ring-gray-600 p-1.5 inline-flex items-center justify-center h-8 w-8 
+        text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700" data-dismiss-target="#toast-undo" aria-label="Close">
+          <span class="sr-only">Close</span>
+            <i class="fa-solid fa-x" style="color: #74C0FC;"></i>
+       </button>
+    </div>
+  `
+
+
+  skill.value = "";
+
+  document.querySelector(".skill-items").appendChild(skillItem);
+}
+
+// Function to remove skill
+function removeSkill(id) {
+  // const skillDiv = document.getElementById(id);
+  // console.log(id);
+  // console.log(skillDiv);
+  id.remove()
+}

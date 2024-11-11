@@ -137,6 +137,85 @@ function removeEducation(id) {
 }
 
 
+
+/* Experience informatins */
+
+// Function to add experience
+let expCounter = 0;
+function addExp() {
+  expCounter++;
+
+  const jobTitle = document.getElementById("job-title-input");
+  const organization = document.getElementById("organization-input");
+  const expStart = document.getElementById("start-exp-date-input");
+  const expEnd = document.getElementById("end-exp-date-input");
+  const expDescription = document.getElementById("exp-description-input");
+
+  // console.log(jobTitle, organization, expStart, expEnd, expDescription)
+
+  if(!jobTitle.value || !organization.value || !expStart.value || !expEnd.value || !expDescription) {
+    alert("Please fill all the inputs");
+    return;
+  }
+
+  const jobItem = document.createElement("div");
+  jobItem.id = `jobcontainer${expCounter}`
+  jobItem.classList.add(
+    "container",
+    "px-5",
+    "py-3",
+    "flex",
+    "flex-col",
+    "gap-2",
+    "rounded-xl",
+    "shadow-lg",
+    "shadow-cyan-500/50",
+    "text-white"
+  )
+
+  jobItem.innerHTML = `
+    <div id="first-side" class="flex justify-between items-start">
+      <div class="flex flex-col">
+        <h2 class="font-bold text-xl text-sky-500">${jobTitle.value}</h2>
+        <p class="font-medium text-sky-200">${organization.value}</p>
+      </div>
+       <div class="">
+        ${expStart.value} to ${expEnd.value}
+      </div>
+    </div>
+    <div class="flex justify-between">
+      <p>
+        ${minimizeText(expDescription.value, 50)}      
+      </p>
+      <button type="button" onclick="removeExp(${jobItem.id})"
+       class="ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 focus:ring-gray-600 p-1.5 inline-flex items-center justify-center h-8 w-8 
+        text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700" data-dismiss-target="#toast-undo" aria-label="Close">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
+  `
+
+  document.querySelector(".experience-informations").appendChild(jobItem);
+
+  // reset inputs
+  jobTitle.value = ""; organization.value = ""; expStart.value = ""; expEnd.value = ""; expDescription.value = "";
+
+  function minimizeText(text, maxsize) {
+    if(text.length > maxsize) {
+      return text.slice(0, maxsize);
+    }
+
+    return text;
+  }
+}
+
+// Function to remove experience
+function removeExp(id) {
+  const jobDiv = document.getElementById(id);
+  console.log(id);
+  id.remove()
+}
+
 /* Skills */
 
 // Function to add skill 

@@ -103,7 +103,7 @@
         class="container w-10/12 mx-auto border-2 border-sky-500 p-5 flex flex-col gap-4"
       >
 
-        <h1 class=" font-bold text-3xl text-center text-sky-400 mb-10">Please Fill the form to get the resume</h1>
+        <h2 class=" font-bold text-3xl text-center text-sky-400 mb-10">Please Fill the form to get the resume</h2>
         <form>
           <div id="personal-informations" class="form-step flex flex-col gap-3">
             <h2 class="text-lg text-white font-semibold text-center mb-3">
@@ -145,7 +145,7 @@
               >
               <input
                 type="text"
-                id="job-title"
+                id="post-title"
                 aria-describedby="helper-text-explanation"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Job title"
@@ -373,35 +373,39 @@
             </div>
           </div>
 
-          <div
-            id="experience-informations"
-            class="form-step hidden flex-col gap-3"
+          <div id="experience-informations" class="form-step hidden flex-col gap-3"
           >
             <h2 class="text-lg text-white font-semibold text-center mb-3">
-              Job Informations
+              Experience Informations
             </h2>
+
+            <!-- Stock the experiences informations -->
+            <div class="experience-informations flex flex-col gap-8 mb-8">
+
+            </div>
+
             <div>
               <label
-                for="job-title"
+                for="job-title-input"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Job title</label
               >
               <input
                 type="text"
-                id="job-title"
+                id="job-title-input"
                 placeholder="eg. Software Engineer"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
             </div>
             <div>
               <label
-                for="organization"
+                for="organization-input"
                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >Organization</label
               >
               <input
                 type="text"
-                id="organization"
+                id="organization-input"
                 placeholder="eg. Google"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
@@ -409,45 +413,48 @@
             <div id="experience-period" class="flex justify-between gap-3">
               <div class="flex-1">
                 <label
-                  for="start-expt-date"
+                  for="start-expt-date-input"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Start Date</label
                 >
                 <input
                   type="date"
-                  id="start-exp-date"
+                  id="start-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
               <div id="end" class="flex-1">
                 <label
-                  for="end-exp-date"
+                  for="end-exp-date-input"
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >End Date</label
                 >
                 <input
                   type="date"
-                  id="end-exp-date"
+                  id="end-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
               </div>
             </div>
-            <label
-              for="exp-description"
+            <div>
+              <label
+              for="exp-description-input"
               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
               >Description</label
             >
             <textarea
               name="description"
-              id="exp-description"
+              id="exp-description-input"
               rows="5"
               cols="10"
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Write your thoughts here..."
             ></textarea>
+            </div>
             <button
               type="button"
               id="add-exp-btn"
+              onclick="addExp()"
               class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <img

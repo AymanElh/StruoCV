@@ -22,6 +22,12 @@ prevBtns.forEach(btn => {
   })
 })
 
+
+/****************************/
+/* Dynamic forms options    */
+/****************************/
+
+
 /* Social links fileds (add and remove skill functions) */
 
 // Function to add a social link on contact information step.
@@ -60,4 +66,72 @@ function addLinkField() {
 function removeLink(id) {
   const elem = document.getElementById(id);
   if(elem) {elem.remove()}
+}
+
+
+/* Education informations add and remove education */
+
+// Function to add education
+let educationCount = 1
+function addEducation() {
+  educationCount++;
+  
+
+  // Get the inputs from the user of educations
+  const degree = document.getElementById("degree");
+  const city = document.getElementById("school-city");
+  const name = document.getElementById("school-name");
+  const startDate = document.getElementById("start-degree-date");
+  const endDate = document.getElementById("end-degree-date");
+  const degreeDescription = document.getElementById("degree-description");
+
+  if(!degree.value || !city.value || !name.value || !startDate.value || !endDate.value || !degreeDescription.value) {
+    alert("Please Fill all inputs");
+    return;
+  }
+
+  const educt = document.createElement("div");
+  educt.classList.add("border", "border-2", "border-white", "text-white", "p-3");
+  educt.id = `eductation-card-${educationCount}`
+  educt.innerHTML = `
+    <div class="first-side flex justify-between">
+      <h2>${degree.value}</h2>
+      <div class="date">
+        ${startDate.value} to ${endDate.value}
+      </div>
+    </div>
+    <div class="second-side">
+      ${name.value} | ${city.value}
+    </div>
+    <div class="third-side">
+      ${degreeDescription.value}
+    </div>
+  `
+
+  const btn = document.createElement("button");
+  btn.classList.add("border", "border-white");
+  btn.textContent = "Remove";
+  btn.onclick = function () {
+    removeEducation(educt.id);
+  }
+
+  educt.appendChild(btn);
+
+    document.getElementById("education-cards").appendChild(educt);
+
+    // reset the inputs
+    degree.value = "";
+    city.value = "";
+    name.value = "";
+    startDate.value = "";
+    endDate.value = "";
+    degreeDescription.value = "";
+
+}
+
+
+// Function to remove educt field
+function removeEducation(id) {
+  const field = document.getElementById(id);
+  if(field) {field.remove()}
 }

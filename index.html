@@ -252,19 +252,25 @@
             <h2 class="text-lg text-white font-semibold text-center mb-3">
               Education Informations
             </h2>
+
+            <!-- Education cards -->
+            <div id="education-cards" class="mt-4">
+      
+            </div>
+
             <div id="education1" class="flex flex-col gap-3">
               <div class="school-degree-and-city flex justify-between gap-3">
                 <div class="flex-1">
                   <label
                     for="degree"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    class="block mb-2 text-sm font-medium text-white"
                     >Degree</label
                   >
                   <input
-                    type="date"
+                    type="text"
                     placeholder="e.g Master degree"
                     id="degree"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-700 border text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <div class="flex-1">
@@ -277,7 +283,7 @@
                     type="text"
                     id="school-city"
                     placeholder="e.g London"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="bg-gray-700 border border-gray-300 text-sm rounded-lg block w-full p-2.5  placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -291,20 +297,20 @@
                   type="text"
                   id="school-name"
                   placeholder="eg. Havard university"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
               <div id="degree-date" class="flex justify-between gap-3">
                 <div id="start" class="flex-1">
                   <label
                     for="start-degree-date"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    class="block mb-2 text-sm font-medium text-white"
                     >Start Date</label
                   >
                   <input
                     type="date"
                     id="start-degree-date"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
                 <div id="end" class="flex-1">
@@ -316,7 +322,7 @@
                   <input
                     type="date"
                     id="end-degree-date"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
                 </div>
               </div>
@@ -330,11 +336,14 @@
                 id="degree-description"
                 rows="5"
                 cols="10"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Write your thoughts here..."
               ></textarea>
-              <button
+              
+            </div>
+            <button
                 type="button"
+                onclick="addEducation()"
                 id="add-education"
                 class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               >
@@ -343,9 +352,10 @@
                   alt="plus icon"
                   style="width: 25px; height: 25px"
                 />
-                <p id="add-education-btn">Add Educations</p>
+                <p id="add-education-btn">Add Education</p>
               </button>
-            </div>
+
+
             <div class="btns mt-5 flex justify-center items-center gap-4">
               <button
                 type="button"

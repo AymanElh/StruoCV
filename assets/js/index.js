@@ -258,3 +258,56 @@ function removeSkill(id) {
   // console.log(skillDiv);
   id.remove()
 }
+
+
+
+/* Languages informations dynamicite */
+
+// function to add languages dynamically
+let languageCounter = 0;
+function addLanguage() {
+  languageCounter++;
+  const name = document.getElementById("language-name-input");
+  const level = document.getElementById("language-level-input");
+
+  if(!name.value || !level.value) {
+    alert("Please fill all inputs");
+    return;
+  }
+
+  const languageContainer = document.createElement("div");
+  languageContainer.id = `languagecontainer${languageCounter}`
+  languageContainer.classList.add(
+    "shadow-lg",
+    "shadow-indigo-500/30",
+    "px-6",
+    "py-2",
+    "flex",
+    "justify-between",
+    "items-center",
+    "w-2/6",
+    "rounded-lg",
+    "bg-gray-800",
+    "mb-6"
+  )
+   
+  languageContainer.innerHTML = `
+    <p class="language-name font-semibold text-lg text-sky-500">${name.value}</p>
+    <p class="language-level font-medium text-white">${level.value}</p>
+    <button type="button" onclick="removeLanguage(${languageContainer.id})">
+      <i class="fa-solid fa-x" style="color: #74C0FC;"></i>
+    </button>
+  `
+
+  document.querySelector(".languages-container").appendChild(languageContainer);
+
+  // reset inputs 
+  name.value = "";
+  level.value = "";
+}
+
+// Function to remove language
+function removeLanguage(id) {
+  console.log(id);
+  id.remove();
+}

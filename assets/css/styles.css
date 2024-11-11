@@ -848,6 +848,18 @@ video {
   width: 100%;
 }
 
+.w-3\/6 {
+  width: 50%;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-2\/6 {
+  width: 33.333333%;
+}
+
 .max-w-\[12rem\] {
   max-width: 12rem;
 }
@@ -1198,6 +1210,16 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1335,6 +1357,26 @@ video {
 
 .shadow-cyan-500 {
   --tw-shadow-color: #06b6d4;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-indigo-50 {
+  --tw-shadow-color: #eef2ff;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-indigo-500\/40 {
+  --tw-shadow-color: rgb(99 102 241 / 0.4);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-indigo-500 {
+  --tw-shadow-color: #6366f1;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-indigo-500\/30 {
+  --tw-shadow-color: rgb(99 102 241 / 0.3);
   --tw-shadow: var(--tw-shadow-colored);
 }
 

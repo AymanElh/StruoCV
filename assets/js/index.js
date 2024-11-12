@@ -26,6 +26,7 @@
 const nextButton = document.getElementById("next-button");
 const prevButton = document.getElementById("prev-button");
 const formSteps = document.querySelectorAll(".form-step");
+const submitBtn = document.querySelector(".submit-btn");
 
 let counter = 0;
 function stepperForm() {
@@ -38,10 +39,15 @@ function stepperForm() {
   } else {
     prevButton.classList.remove("hidden");
   }
+
   if(counter === formSteps.length-1) {
-    nextButton.textContent = "Submit";
-    // nextButton.setAttribute("type", "submit");
+    nextButton.classList.add("hidden");
+    submitBtn.classList.remove("hidden");
+  } else {
+    nextButton.classList.remove("hidden");
+    submitBtn.classList.add("hidden");
   }
+
 }
 
 nextButton.addEventListener("click", () => {
@@ -271,8 +277,9 @@ function addSkill() {
 
   const skillItem = document.createElement("div")
   skillItem.classList.add("skills", "flex", "items-center", "max-w-[12rem]", "p-4", "text-gray", "bg-gray-800", "rounded-lg", "shadow", "text-sky-400", "text-xl");
+  skillItem.id = `skill${skillCount}`
   skillItem.innerHTML = `
-    <div class="skill text-sm font-semibold mr-2" id="skill-${skillCount}">
+    <div class="skill text-sm font-semibold mr-2" id="skill-name-${skillCount}">
        ${skill.value}
     </div>
     <div class="flex items-center ms-auto space-x-2 rtl:space-x-reverse">

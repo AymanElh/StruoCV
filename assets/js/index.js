@@ -1,27 +1,67 @@
-const prevBtns = document.querySelectorAll(".prev-btn");
-const nextBtns = document.querySelectorAll(".next-btn");
+// const prevBtns = document.querySelectorAll(".prev-btn");
+// const nextBtns = document.querySelectorAll(".next-btn");
 
+// const formSteps = document.querySelectorAll(".form-step");
+
+// let counter = 0;
+
+
+// nextBtns.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     formSteps[counter].classList.replace("flex", "hidden")
+//     counter++;
+//     formSteps[counter].classList.replace("hidden", "flex")
+//   })
+// })
+
+// prevBtns.forEach(btn => {
+//   btn.addEventListener("click", () => {
+//     formSteps[counter].classList.replace("flex", "hidden");
+//     counter--;
+//     formSteps[counter].classList.replace("hidden", "flex");
+//   })
+// })
+
+
+const nextButton = document.getElementById("next-button");
+const prevButton = document.getElementById("prev-button");
 const formSteps = document.querySelectorAll(".form-step");
 
 let counter = 0;
+function stepperForm() {
+  formSteps.forEach(step => step.classList.replace("flex", "hidden"))
 
+  formSteps[counter].classList.replace("hidden", "flex");
 
-nextBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    formSteps[counter].classList.replace("flex", "hidden")
+  if(counter === 0) {
+    prevButton.classList.add("hidden");
+  } else {
+    prevButton.classList.remove("hidden");
+  }
+  if(counter === formSteps.length-1) {
+    nextButton.textContent = "Submit";
+    // nextButton.setAttribute("type", "submit");
+  }
+}
+
+nextButton.addEventListener("click", () => {
+  if(counter <= formSteps.length-1) {
     counter++;
-    formSteps[counter].classList.replace("hidden", "flex")
-  })
+    stepperForm();
+  }
+  collectPersonalInfos();
 })
 
-prevBtns.forEach(btn => {
-  btn.addEventListener("click", () => {
-    formSteps[counter].classList.replace("flex", "hidden");
+
+prevButton.addEventListener("click", () => {
+  if(counter > 0) {
     counter--;
-    formSteps[counter].classList.replace("hidden", "flex");
-  })
+    stepperForm();
+  }
 })
 
+
+stepperForm();
 
 /****************************/
 /* Dynamic forms options    */
@@ -230,10 +270,9 @@ function addSkill() {
   }
 
   const skillItem = document.createElement("div")
-  skillItem.id = `skill${skillCount}`;
-  skillItem.classList.add("flex", "items-center", "max-w-[12rem]", "p-4", "text-gray", "bg-gray-800", "rounded-lg", "shadow", "text-sky-400", "text-xl");
+  skillItem.classList.add("skills", "flex", "items-center", "max-w-[12rem]", "p-4", "text-gray", "bg-gray-800", "rounded-lg", "shadow", "text-sky-400", "text-xl");
   skillItem.innerHTML = `
-    <div class="text-sm font-semibold mr-2" id="skill-name-${skillCount}">
+    <div class="skill text-sm font-semibold mr-2" id="skill-${skillCount}">
        ${skill.value}
     </div>
     <div class="flex items-center ms-auto space-x-2 rtl:space-x-reverse">

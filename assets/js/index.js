@@ -55,7 +55,6 @@ nextButton.addEventListener("click", () => {
     counter++;
     stepperForm();
   }
-  collectPersonalInfos();
 })
 
 
@@ -89,7 +88,7 @@ function addLinkField() {
   const linkInput = document.createElement("input");
   linkInput.type = "text";
   linkInput.placeholder = "Enter your social link eg. github, linkedin ..."
-  linkInput.classList.add("text-sm", "rounded-lg",  "block", "w-full", "p-2.5", "bg-gray-700", "border-gray-600", "placeholder-gray-400", "text-white", "focus:ring-blue-500", "focus:border-blue-500");
+  linkInput.classList.add("social-link", "text-sm", "rounded-lg",  "block", "w-full", "p-2.5", "bg-gray-700", "border-gray-600", "placeholder-gray-400", "text-white", "focus:ring-blue-500", "focus:border-blue-500");
 
 
   // remove button
@@ -137,19 +136,19 @@ function addEducation() {
   }
 
   const educt = document.createElement("div");
-  educt.classList.add("border", "border-2", "border-white", "text-white", "p-3");
+  educt.classList.add("educ-container","border", "border-2", "border-white", "text-white", "p-3");
   educt.id = `eductation-card-${educationCount}`
   educt.innerHTML = `
     <div class="first-side flex justify-between">
-      <h2>${degree.value}</h2>
+      <h2 class="degre-name">${degree.value}</h2>
       <div class="date">
-        ${startDate.value} to ${endDate.value}
+        <span class="start-date">${startDate.value}</span> to <span class="end-date">${endDate.value}</span>
       </div>
     </div>
     <div class="second-side">
-      ${name.value} | ${city.value}
+      <span class="school-name-educ">${name.value}</span> | <span class="school-city-educ">${city.value}</span>
     </div>
-    <div class="third-side">
+    <div class="degree-description-educ">
       ${degreeDescription.value}
     </div>
   `
@@ -207,7 +206,7 @@ function addExp() {
   const jobItem = document.createElement("div");
   jobItem.id = `jobcontainer${expCounter}`
   jobItem.classList.add(
-    "container",
+    "exp-container",
     "px-5",
     "py-3",
     "flex",
@@ -222,15 +221,15 @@ function addExp() {
   jobItem.innerHTML = `
     <div id="first-side" class="flex justify-between items-start">
       <div class="flex flex-col">
-        <h2 class="font-bold text-xl text-sky-500">${jobTitle.value}</h2>
-        <p class="font-medium text-sky-200">${organization.value}</p>
+        <h2 class="exp-title font-bold text-xl text-sky-500">${jobTitle.value}</h2>
+        <p class="orgranization-name font-medium text-sky-200">${organization.value}</p>
       </div>
        <div class="">
-        ${expStart.value} to ${expEnd.value}
+        <span class="start-exp-date">${expStart.value}</span> to <span class="end-exp-date">${expEnd.value}</span>
       </div>
     </div>
     <div class="flex justify-between">
-      <p>
+      <p class="exp-description">
         ${minimizeText(expDescription.value, 50)}      
       </p>
       <button type="button" onclick="removeExp(${jobItem.id})"
@@ -324,6 +323,7 @@ function addLanguage() {
   const languageContainer = document.createElement("div");
   languageContainer.id = `languagecontainer${languageCounter}`
   languageContainer.classList.add(
+    "language",
     "shadow-lg",
     "shadow-indigo-500/30",
     "px-6",

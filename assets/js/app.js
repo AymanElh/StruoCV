@@ -22,34 +22,35 @@ function collectData() {
   }
 
 
-  // Education informations
-  let educations = []
-  const educationsValues = Array.from(document.querySelectorAll(".educ-container"));
-  educationsValues.forEach(v => {
+// Education informations
+let educations = [];
+const educationsValues = Array.from(document.querySelectorAll(".educ-container"));
+educationsValues.forEach(v => {
+  if (v) {
     const degree = v.querySelector(".degree-name");
     const school = v.querySelector(".school-name-educ");
     const city = v.querySelector(".school-city-educ");
     const startDate = v.querySelector(".start-date");
     const endDate = v.querySelector(".end-date");
-    const description = v.querySelector(".degree-descritption-educ");
+    const description = v.querySelector(".degree-description-educ");
 
-
-    if(degree && school && city && startDate && endDate && description) {
+    if (degree && school && city && startDate && endDate && description) {
       let newEducItem = {
-        degree: degree.textContent,
-        school: school.textContent,
-        city: city.textContent,
-        startDate: startDate.textContent,
-        endDate: endDate.textContent,
-        description: description.textContent
+        degree: degree.textContent.trim(),
+        school: school.textContent.trim(),
+        city: city.textContent.trim(),
+        startDate: startDate.textContent.trim(),
+        endDate: endDate.textContent.trim(),
+        description: description.textContent.trim()
+      };
+
+      if (Object.values(newEducItem).some(value => value !== '')) {
+        educations.push(newEducItem);
       }
-  
-      educations.push(newEducItem);
-    } else {
-      alert("Error");
     }
-  })
-  resumeForm.educations = educations;
+  }
+});
+resumeForm.educations = educations;
 
   // Experience informations
   let experinces = [];

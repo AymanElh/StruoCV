@@ -140,7 +140,7 @@ function addEducation() {
   educt.id = `eductation-card-${educationCount}`
   educt.innerHTML = `
     <div class="first-side flex justify-between">
-      <h2 class="degre-name">${degree.value}</h2>
+      <h2 class="degree-name">${degree.value}</h2>
       <div class="date">
         <span class="start-date">${startDate.value}</span> to <span class="end-date">${endDate.value}</span>
       </div>
@@ -299,7 +299,7 @@ function addSkill() {
 // Function to remove skill
 function removeSkill(id) {
   // const skillDiv = document.getElementById(id);
-  // console.log(id);
+  console.log(id);
   // console.log(skillDiv);
   id.remove()
 }

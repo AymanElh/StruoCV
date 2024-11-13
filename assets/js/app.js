@@ -1,6 +1,5 @@
 // Object to store the resume informations
-let resumeForm = {}
-
+let resumeForm = JSON.parse(localStorage.getItem("resumeInfos")) || {};
 
 function collectData() {
 
@@ -26,13 +25,13 @@ function collectData() {
   // Education informations
   let educations = []
   const educationsValues = Array.from(document.querySelectorAll(".educ-container"));
-  educationsValues.forEach(value => {
-    const degree = value.querySelector(".degree-name");
-    const school = value.querySelector(".school-name-educ");
-    const city = value.querySelector(".school-city-educ");
-    const startDate = value.querySelector(".start-date");
-    const endDate = value.querySelector(".end-date");
-    const description = value.querySelector(".degree-descritption-educ");
+  educationsValues.forEach(v => {
+    const degree = v.querySelector(".degree-name");
+    const school = v.querySelector(".school-name-educ");
+    const city = v.querySelector(".school-city-educ");
+    const startDate = v.querySelector(".start-date");
+    const endDate = v.querySelector(".end-date");
+    const description = v.querySelector(".degree-descritption-educ");
 
 
     if(degree && school && city && startDate && endDate && description) {
@@ -122,3 +121,7 @@ form.addEventListener("submit", (event) => {
 
 })
 
+// Local Storage 
+function addToLocalStorage() {
+  window.localStorage.setItem("resumeInfos", JSON.stringify(resumeForm));
+}

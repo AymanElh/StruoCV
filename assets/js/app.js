@@ -31,7 +31,7 @@ function collectData() {
     const city = v.querySelector(".school-city-educ");
     const startDate = v.querySelector(".start-date");
     const endDate = v.querySelector(".end-date");
-    const description = v.querySelector(".degree-descritption-educ");
+    const description = v.querySelector(".degree-description-educ");
 
 
     if(degree && school && city && startDate && endDate && description) {

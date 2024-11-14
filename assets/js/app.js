@@ -119,9 +119,29 @@ form.addEventListener("submit", (event) => {
   alert("data collected");
   console.log(resumeForm)
 
+  updateDataOnResume();
+
 })
 
 // Local Storage 
 function addToLocalStorage() {
   window.localStorage.setItem("resumeInfos", JSON.stringify(resumeForm));
 }
+
+
+// Upload data to the resume
+
+
+function updateDataOnResume () {
+  // upload name
+  const fullName = `${resumeForm.personalInformations.firstName} ${resumeForm.personalInformations.lastName}`
+  console.log(fullName);
+  const nameElement = document.getElementById("resume-name");
+  console.log(nameElement)
+  if(nameElement) {
+    nameElement.textContent = fullName;
+  } else {
+    console.log("Element not found");
+  }
+
+} 

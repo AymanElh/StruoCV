@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.14"
+  },
+  "dependencies": {
+    "html2pdf.js": "^0.10.2"
   }
 }

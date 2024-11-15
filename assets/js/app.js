@@ -115,9 +115,7 @@ const form = document.getElementById("resume-form")
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  collectData();
-  alert("data collected");
-  console.log(resumeForm)
+  // download resume
 
 })
 

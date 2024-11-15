@@ -1,28 +1,3 @@
-// const prevBtns = document.querySelectorAll(".prev-btn");
-// const nextBtns = document.querySelectorAll(".next-btn");
-
-// const formSteps = document.querySelectorAll(".form-step");
-
-// let counter = 0;
-
-
-// nextBtns.forEach(btn => {
-//   btn.addEventListener("click", () => {
-//     formSteps[counter].classList.replace("flex", "hidden")
-//     counter++;
-//     formSteps[counter].classList.replace("hidden", "flex")
-//   })
-// })
-
-// prevBtns.forEach(btn => {
-//   btn.addEventListener("click", () => {
-//     formSteps[counter].classList.replace("flex", "hidden");
-//     counter--;
-//     formSteps[counter].classList.replace("hidden", "flex");
-//   })
-// })
-
-
 const nextButton = document.getElementById("next-button");
 const prevButton = document.getElementById("prev-button");
 const formSteps = document.querySelectorAll(".form-step");
@@ -40,15 +15,25 @@ function stepperForm() {
     prevButton.classList.remove("hidden");
   }
 
+  console.log(formSteps.length);
+
+  if(counter === formSteps.length-2) {
+    collectData();
+    updateDataOnResume();
+  }
 
 
   if(counter === formSteps.length-1) {
     nextButton.classList.add("hidden");
     submitBtn.classList.remove("hidden");
+    document.getElementById("get-Form").classList.remove("hidden");
   } else {
     nextButton.classList.remove("hidden");
     submitBtn.classList.add("hidden");
   }
+
+  
+  
 
 }
 

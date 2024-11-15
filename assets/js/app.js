@@ -41,7 +41,7 @@ function collectData() {
         city: city.textContent,
         startDate: startDate.textContent,
         endDate: endDate.textContent,
-        description: description.textContent
+        description: description.textContent.trim()
       }
   
       educations.push(newEducItem);
@@ -67,7 +67,7 @@ function collectData() {
       organization: orgranization.textContent,
       startDate: startDate.textContent,
       endDate: endDate.textContent,
-      description: description
+      description: description.textContent
     }
 
     experinces.push(newExp);
@@ -119,7 +119,6 @@ form.addEventListener("submit", (event) => {
   alert("data collected");
   console.log(resumeForm)
 
-  updateDataOnResume();
 
 })
 
@@ -135,13 +134,85 @@ function addToLocalStorage() {
 function updateDataOnResume () {
   // upload name
   const fullName = `${resumeForm.personalInformations.firstName} ${resumeForm.personalInformations.lastName}`
-  console.log(fullName);
   const nameElement = document.getElementById("resume-name");
-  console.log(nameElement)
   if(nameElement) {
     nameElement.textContent = fullName;
   } else {
     console.log("Element not found");
   }
 
+  document.getElementById("resume-post").textContent = resumeForm.personalInformations.postTitle;
+
+  document.getElementById("resume-summary").textContent = resumeForm.summary;
+
+  const skillsContainer = document.getElementById("resume-skills")
+  skillsContainer.innerHTML = "";
+  resumeForm.skills.forEach(skill => {
+    const li = document.createElement("li");
+    li.textContent = skill;
+    skillsContainer.appendChild(li);
+  })
+
+
+  // upload education
+  const educationContainer = document.getElementById("resume-education");
+  educationContainer.innerHTML = "";
+  resumeForm.educations.forEach(education => {
+    const educDiv = document.createElement("div");
+    educDiv.classList.add("mb-4");
+    educDiv.innerHTML = `
+    <h3 class="text-lg font-semibold">${education.degree}, ${education.school}</h3>
+    <p class="text-gray-700">${education.description}</p>
+    <p class="text-gray-600">${education.startDate} to ${education.endDate}</p>`
+  
+    educationContainer.appendChild(educDiv);
+  })
+
+  // update resume
+  const expContainer = document.getElementById("resume-exp");
+  // const expdiv = document.createElement("div")
+  expContainer.innerHTML = "";
+  resumeForm.experinces.forEach(exp => {
+    const jobDiv = document.createElement("div");
+    jobDiv.classList.add("mb-4");
+    jobDiv.innerHTML = `
+    <h3 class="text-lg font-semibold">${exp.job}, ${exp.organization}</h3>
+    <p class="text-gray-700">${exp.description}</p>
+    <p class="text-gray-600">${exp.startDate} to ${exp.endDate}</p>
+  `;
+  expContainer.appendChild(jobDiv);
+
+  })
+
+  const contactContainer = document.getElementById("resume-contact");
+  contactContainer.innerHTML = "";
+
+  const email = resumeForm.contactInformations.email;
+  const phone = resumeForm.contactInformations.phoneNumber;
+  const links = resumeForm.contactInformations.links
+
+  const emailCont = document.createElement("li");
+  emailCont.textContent = email;
+  contactContainer.appendChild(emailCont);
+
+  const phoneCont = document.createElement("li");
+  console.log(phone);
+  phoneCont.textContent = phone;
+  contactContainer.appendChild(phoneCont);
+
+  if(links.length > 0) {
+    links.forEach(link => {
+      const linkCont = document.createElement("li");
+      const a = document.createElement("a");
+
+      a.href = link;
+      a.textContent = link;
+
+      linkCont.appendChild(a);
+      contactContainer.appendChild(linkCont);
+    })
+  }
+
 } 
+
+updateDataOnResume();

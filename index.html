@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
     <title>Struo CV</title>
   </head>
   <body class="dark:bg-gray-900">
@@ -126,6 +127,7 @@
                   placeholder="First Name"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+                <span class="error-message"></span>
               </div>
               <div>
                 <label
@@ -138,7 +140,8 @@
                 rounded-lg focus:ring-blue-500 focus:border-blue-500 block
                 w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                 dark:placeholder-gray-400 dark:text-white
-                dark:focus:ring-blue-500 dark:focus:border-blue-500"">
+                dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <span class="error-message"></span>
               </div>
             </div>
             <div>
@@ -154,6 +157,7 @@
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Job title"
               />
+              <span class="error-message"></span>
             </div>
 
             <div class="image">
@@ -196,6 +200,7 @@
                 placeholder="0xxxxxxx"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
+              <span class="error-message"></span>
             </div>
             <div class="email">
               <label
@@ -209,6 +214,7 @@
                 placeholder="email"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
+              <span class="error-message"></span>
             </div>
             <div id="social-links" class="flex flex-col gap-3">
               <h2 class="font-semibold text-xl text-center text-white my-2">
@@ -254,6 +260,7 @@
                     id="degree"
                     class="bg-gray-700 border text-sm rounded-lg block w-full p-2.5 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
+                  <span class="error-message"></span>
                 </div>
                 <div class="flex-1">
                   <label
@@ -267,6 +274,7 @@
                     placeholder="e.g London"
                     class="bg-gray-700 border border-gray-300 text-sm rounded-lg block w-full p-2.5 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
+                  <span class="error-message"></span>
                 </div>
               </div>
               <div class="school-name">
@@ -281,6 +289,7 @@
                   placeholder="eg. Havard university"
                   class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 />
+                <span class="error-message"></span>
               </div>
               <div id="degree-date" class="flex justify-between gap-3">
                 <div id="start" class="flex-1">
@@ -294,6 +303,7 @@
                     id="start-degree-date"
                     class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
+                  <span class="error-message"></span>
                 </div>
                 <div id="end" class="flex-1">
                   <label
@@ -306,6 +316,7 @@
                     id="end-degree-date"
                     class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                   />
+                  <span class="error-message"></span>
                 </div>
               </div>
               <label
@@ -321,10 +332,10 @@
                 class="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Write your thoughts here..."
               ></textarea>
+              <span class="error-message"></span>
             </div>
             <button
               type="button"
-              onclick="addEducation()"
               id="add-education"
               class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
@@ -360,6 +371,7 @@
                 placeholder="eg. Software Engineer"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
+              <span class="error-message"></span>
             </div>
             <div>
               <label
@@ -373,6 +385,7 @@
                 placeholder="eg. Google"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
+              <span class="error-message"></span>
             </div>
             <div id="experience-period" class="flex justify-between gap-3">
               <div class="flex-1">
@@ -386,6 +399,7 @@
                   id="start-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+              <span class="error-message"></span>
               </div>
               <div id="end" class="flex-1">
                 <label
@@ -398,6 +412,7 @@
                   id="end-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
+              <span class="error-message"></span>
               </div>
             </div>
             <div>
@@ -414,11 +429,11 @@
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Write your thoughts here..."
               ></textarea>
+              <span class="error-message"></span>
             </div>
             <button
               type="button"
               id="add-exp-btn"
-              onclick="addExp()"
               class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
               <img
@@ -447,10 +462,10 @@
                 placeholder="eg. HTML, CSS ..."
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
+            <span class="error-message"></span>
             </div>
             <button
               type="button"
-              onclick="addSkill()"
               id="add-skill-btn"
               class="flex justify-center items-center gap-2 focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             >
@@ -484,6 +499,7 @@
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               placeholder="Write your thoughts here..."
             ></textarea>
+            <span class="error-message"></span>
           </div>
 
           <div
@@ -525,6 +541,70 @@
             </button>
           </div>
 
+          
+      <div id="resume-Form" class="form-step hidden bg-gray-900 font-sans">
+        <!-- <h2 class="">This is your resume</h2> -->
+        <div class="container mx-auto py-8 px-4 w-9/12">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h1 id="resume-name" class="text-3xl font-semibold">
+              <!-- Full Name -->
+              John Doe
+            </h1>
+            <p id="resume-post" class="text-gray-600">
+              <!-- Post Title-->
+              Full Stack Developer
+            </p>
+  
+            <hr class="my-4" />
+  
+            <h2 class="text-xl font-semibold mb-2 w-8/12">Summary</h2>
+            <p id="resume-summary" class="text-gray-700 flex">
+              <!-- Summary -->
+            </p>
+  
+            <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
+            <ul id="resume-skills" class="list-disc list-inside text-gray-700">
+              <!-- Skills --> 
+            </ul>
+  
+            <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
+            <div id="resume-exp" class="mb-4">
+            <!-- Resume exp -->
+            </div>
+  
+  
+  
+            <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
+            <div id="resume-education" class="mb-4">
+              <!-- Education-->
+              
+            </div>
+  
+            <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
+            <ul id="resume-contact" class="list-disc list-inside text-gray-700">
+              <!-- Contact -->
+              <li>Email: john.doe@example.com</li>
+              <li>
+                LinkedIn:
+                <a
+                  href="https://www.linkedin.com/in/johndoe"
+                  class="text-blue-500 hover:underline"
+                  >linkedin.com/in/johndoe</a
+                >
+              </li>
+              <li>
+                Website:
+                <a
+                  href="https://www.johndoe.com"
+                  class="text-blue-500 hover:underline"
+                  >johndoe.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
           <div class="btns mt-5 flex justify-center items-center gap-4">
             <button
               type="button"
@@ -546,74 +626,15 @@
             type="submit"
             class="hidden submit-btn focus:outline-none text-white focus:ring-4 mt-5 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-green-600 hover:bg-green-700 focus:ring-green-800"
           >
-            Submit
+            Donwnload your resume
           </button>
         </form>
       </div>
+
+  
     </main>
 
-    <div class=" bg-gray-900 font-sans">
-      <div class="container mx-auto py-8 px-4 w-8/12">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-          <h1 id="resume-name" class="text-3xl font-semibold">
-            <!-- Full Name -->
-            John Doe
-          </h1>
-          <p id="resume-post" class="text-gray-600">
-            <!-- Post Title-->
-            Full Stack Developer
-          </p>
-
-          <hr class="my-4" />
-
-          <h2 class="text-xl font-semibold mb-2">Summary</h2>
-          <p id="resume-summary" class="text-gray-700">
-            <!-- Summary -->
-          </p>
-
-          <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
-          <ul id="resume-skills" class="list-disc list-inside text-gray-700">
-            <!-- Skills --> 
-          </ul>
-
-          <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
-          <div id="resume-exp" class="mb-4">
-          <!-- Resume exp -->
-          </div>
-
-
-
-          <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
-          <div id="resume-education" class="mb-4">
-            <!-- Education-->
-            
-          </div>
-
-          <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
-          <ul id="resume-contact" class="list-disc list-inside text-gray-700">
-            <!-- Contact -->
-            <li>Email: john.doe@example.com</li>
-            <li>
-              LinkedIn:
-              <a
-                href="https://www.linkedin.com/in/johndoe"
-                class="text-blue-500 hover:underline"
-                >linkedin.com/in/johndoe</a
-              >
-            </li>
-            <li>
-              Website:
-              <a
-                href="https://www.johndoe.com"
-                class="text-blue-500 hover:underline"
-                >johndoe.com</a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    
     <footer class="mt-20 bg-white dark:bg-gray-900">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
@@ -798,8 +819,10 @@
         </div>
       </div>
     </footer>
+  
     <script src="./assets/js/index.js"></script>
-    <script src="./assets/js/app.js"></script>
     <script src="./assets/js/dataValidation.js"></script>
+    <script src="./assets/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
   </body>
 </html>

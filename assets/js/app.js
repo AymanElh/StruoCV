@@ -119,7 +119,6 @@ form.addEventListener("submit", (event) => {
   alert("data collected");
   console.log(resumeForm)
 
-
 })
 
 // Local Storage 
@@ -215,4 +214,4 @@ function updateDataOnResume () {
 
 } 
 
-updateDataOnResume();
+

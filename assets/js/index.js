@@ -40,6 +40,10 @@ function stepperForm() {
     prevButton.classList.remove("hidden");
   }
 
+  if(counter === 7) {
+    updateDataOnResume();
+  }
+
   if(counter === formSteps.length-1) {
     nextButton.classList.add("hidden");
     submitBtn.classList.remove("hidden");
@@ -51,7 +55,17 @@ function stepperForm() {
 }
 
 nextButton.addEventListener("click", () => {
-  if(counter <= formSteps.length-1) {
+
+  let isValid = true;
+  if(counter === 0) {
+    isValid = step1();
+  } else if(counter === 1) {
+    isValid = step2();
+  } else if (counter === 5) {
+    isValid = step6();
+  }
+  console.log(isValid);
+  if(isValid && counter <= formSteps.length-1) {
     counter++;
     stepperForm();
   }
@@ -91,6 +105,10 @@ function addLinkField() {
   linkInput.classList.add("social-link", "text-sm", "rounded-lg",  "block", "w-full", "p-2.5", "bg-gray-700", "border-gray-600", "placeholder-gray-400", "text-white", "focus:ring-blue-500", "focus:border-blue-500");
 
 
+  // Error
+  const errorContainer = document.createElement("span");
+  errorContainer.classList.add("error-message");
+
   // remove button
   const removeBtn = document.createElement("button");
   removeBtn.type = "button";
@@ -102,6 +120,7 @@ function addLinkField() {
 
   // Save the link to the html
   linkContainer.appendChild(linkInput);
+  linkContainer.appendChild(errorContainer);
   linkContainer.appendChild(removeBtn);
 
   document.getElementById("social-links").appendChild(linkContainer);
@@ -117,7 +136,7 @@ function removeLink(id) {
 /* Education informations add and remove education */
 
 // Function to add education
-let educationCount = 1
+let educationCount = 0
 function addEducation() {
   educationCount++;
   
@@ -164,6 +183,8 @@ function addEducation() {
 
     document.getElementById("education-cards").appendChild(educt);
 
+    
+    
     // reset the inputs
     degree.value = "";
     city.value = "";
@@ -172,8 +193,17 @@ function addEducation() {
     endDate.value = "";
     degreeDescription.value = "";
 
-}
 
+
+}
+// Get the addEducationButton
+document.getElementById("add-education").addEventListener("click", () => {
+  let educationValidation = false;
+  educationValidation = step3();
+  if(educationValidation) {
+    addEducation()
+  }
+})
 
 // Function to remove educt field
 function removeEducation(id) {
@@ -254,10 +284,17 @@ function addExp() {
   }
 }
 
+document.getElementById("add-exp-btn").addEventListener("click", () => {
+  let expValidation = false;
+  expValidation = step4();
+  if(expValidation) {
+    addExp();
+  }
+})
+
 // Function to remove experience
 function removeExp(id) {
   const jobDiv = document.getElementById(id);
-  console.log(id);
   id.remove()
 }
 
@@ -295,6 +332,14 @@ function addSkill() {
 
   document.querySelector(".skill-items").appendChild(skillItem);
 }
+
+document.getElementById("add-skill-btn").addEventListener("click", () => {
+  let skillValidation = false;
+  skillValidation = step5();
+  if(skillValidation) {
+    addSkill();
+  }
+})
 
 // Function to remove skill
 function removeSkill(id) {

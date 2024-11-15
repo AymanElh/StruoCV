@@ -40,9 +40,7 @@ function stepperForm() {
     prevButton.classList.remove("hidden");
   }
 
-  if(counter === 7) {
-    updateDataOnResume();
-  }
+
 
   if(counter === formSteps.length-1) {
     nextButton.classList.add("hidden");

@@ -111,12 +111,26 @@ function collectData() {
 
 
 // Collect data on submit even on the form
-const form = document.getElementById("resume-form")
-form.addEventListener("submit", (event) => {
+const donwnloadBtn = document.getElementById("download-btn");
+donwnloadBtn.addEventListener("click", (event) => {
   event.preventDefault();
-
+  console.log(donwnloadBtn);
   // download resume
+  const resumeContainer = document.getElementById("get-Form");
 
+  if(!resumeContainer) {
+    alert("Error");
+  }
+
+  const options = {
+    margin: 1,
+    filename: "resume.pdf",
+    html2canvas: {scale: 3},
+    jsPdf: {unit: "in", format: "letter", orientation: "portrait"}
+  };
+
+  html2pdf().set(options).from(resumeContainer).save()
+  
 })
 
 // Local Storage 

@@ -13,6 +13,12 @@
     />
     <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
     <title>Struo CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .step-completed {
+        color: #14a34a;
+      }
+    </style>
   </head>
   <body class="dark:bg-gray-900">
     <header class="mb-20">
@@ -103,6 +109,58 @@
         <h2 class="font-bold text-3xl text-center text-sky-400 mb-10">
           Please Fill the form to get the resume
         </h2>
+
+        <div id="progress-bar" class="container w-full mb-4">
+   
+
+          <ol id="stepper" class="flex flex-wrap items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+            <li class="flex items-center text-blue-500 after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    <p class="flex">Personal <span class="hidden sm:inline-flex sm:ms-2">Info</span></p>
+                </span>
+            </li>
+            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">2</span>
+                    Contact
+                </span>
+            </li>
+            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">3</span>
+                    Education 
+                </span>
+            </li>
+            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">4</span>
+                    Experience
+                </span>
+            </li>
+            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">5</span>
+                    Skills
+                </span>
+            </li>
+            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
+                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">6</span>
+                    Summary
+                </span>
+            </li>
+            <li class="flex items-center">
+                <span class="me-2">7</span>
+                Languages
+            </li>
+          </ol>
+          
+
+        </div>
+
         <form id="resume-form" class="flex flex-col">
           <div id="personal-informations" class="form-step flex flex-col gap-3">
             <h2 class="text-lg text-white font-semibold text-center mb-3">
@@ -119,7 +177,7 @@
                   type="text"
                   id="first-name"
                   placeholder="First Name"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 />
                 <span class="error-message"></span>
               </div>
@@ -130,11 +188,11 @@
                   >Last Name</label
                 >
                 <input type="text" id="last-name" placeholder="Last Name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm
-                rounded-lg focus:ring-blue-500 focus:border-blue-500 block
-                w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-                dark:placeholder-gray-400 dark:text-white
-                dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                class=" border  text-sm
+                rounded-lg block
+                w-full p-2.5 bg-gray-700 border-gray-600
+                placeholder-gray-400 text-white
+                focus:ring-blue-500 focus:border-blue-500">
                 <span class="error-message"></span>
               </div>
             </div>
@@ -148,7 +206,7 @@
                 type="text"
                 id="post-title"
                 aria-describedby="helper-text-explanation"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Job title"
               />
               <span class="error-message"></span>
@@ -160,11 +218,11 @@
                 for="file-input"
                 >Upload file</label
               >
-              <input class="bg-gray-50 border border-gray-300 text-gray-900
-              text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block
-              w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
-              dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
-              dark:focus:border-blue-500"" aria-describedby="file_input_help"
+              <input class=" border
+              text-sm rounded-lg block
+              w-full p-2.5 bg-gray-700 border-gray-600
+              placeholder-gray-400 text-white focus:ring-blue-500
+              focus:border-blue-500"" aria-describedby="file_input_help"
               id="file-input" type="file" />
               <p
                 class="mt-1 text-sm text-gray-500 dark:text-gray-300"
@@ -192,7 +250,7 @@
                 type="text"
                 id="phone-number"
                 placeholder="0xxxxxxx"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               />
               <span class="error-message"></span>
             </div>
@@ -206,7 +264,7 @@
                 type="email"
                 id="email"
                 placeholder="email"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               />
               <span class="error-message"></span>
             </div>

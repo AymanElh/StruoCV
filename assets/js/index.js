@@ -2,6 +2,7 @@ const nextButton = document.getElementById("next-button");
 const prevButton = document.getElementById("prev-button");
 const formSteps = document.querySelectorAll(".form-step");
 const submitBtn = document.querySelector(".submit-btn");
+const progressSteps = document.querySelectorAll("#progress-bar li");
 
 let counter = 0;
 function stepperForm() {
@@ -37,6 +38,24 @@ function stepperForm() {
 
 }
 
+// Update progress bar
+function updateProgressBar() {
+  progressSteps.forEach((li, index) => {
+    if(index < counter) {
+      li.classList.add("text-green-600");
+      li.classList.remove("text-blue-500", "text-gray-500");
+    }
+    else if(index === counter) {
+      li.classList.add("text-blue-500"); 
+      li.classList.remove("text-gray-500", "text-green-600");
+      
+    } else {
+      li.classList.remove("text-blue-500", "text-green-600");
+      li.classList.add("text-gray-500")
+    }
+  })
+}
+
 nextButton.addEventListener("click", () => {
 
   let isValid = true;
@@ -51,6 +70,7 @@ nextButton.addEventListener("click", () => {
   if(isValid && counter <= formSteps.length-1) {
     counter++;
     stepperForm();
+    updateProgressBar();
   }
 })
 
@@ -59,6 +79,7 @@ prevButton.addEventListener("click", () => {
   if(counter > 0) {
     counter--;
     stepperForm();
+    updateProgressBar();
   }
 })
 

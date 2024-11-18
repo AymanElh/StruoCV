@@ -129,7 +129,9 @@ donwnloadBtn.addEventListener("click", (event) => {
     jsPdf: {unit: "in", format: "letter", orientation: "portrait"}
   };
 
-  html2pdf().set(options).from(resumeContainer).save()
+  setTimeout(() => {
+    html2pdf().set(options).from(resumeContainer).save()
+  }, 2000);
   
 })
 

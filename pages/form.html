@@ -11,7 +11,16 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.min.js"
+      integrity="sha512-w3u9q/DeneCSwUDjhiMNibTRh/1i/gScBVp2imNVAMCt6cUHIw6xzhzcPFIaL3Q1EbI2l+nu17q2aLJJLo4ZYg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>Struo CV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -26,7 +35,10 @@
         <div
           class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
         >
-          <a href="../index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <a
+            href="../index.html"
+            class="flex items-center space-x-3 rtl:space-x-reverse"
+          >
             <img
               class="w-20 h-20 rounded-full object-cover object-center"
               src="../assets/images/logo (1).png"
@@ -95,7 +107,7 @@
                   >How it Works</a
                 >
               </li>
-              <li>
+              <li></li>
             </ul>
           </div>
         </div>
@@ -111,54 +123,88 @@
         </h2>
 
         <div id="progress-bar" class="container w-full mb-4">
-   
-
-          <ol id="stepper" class="flex flex-wrap items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-            <li class="flex items-center text-blue-500 after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <svg class="w-4 h-4 sm:w-5 sm:h-5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                    </svg>
-                    <p class="flex">Personal <span class="hidden sm:inline-flex sm:ms-2">Info</span></p>
-                </span>
+          <ol
+            id="stepper"
+            class="flex flex-wrap items-center justify-between w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base"
+          >
+            <li
+              class="flex items-center text-blue-500 after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <svg
+                  class="w-4 h-4 sm:w-5 sm:h-5 me-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"
+                  />
+                </svg>
+                <p class="flex">
+                  Personal
+                  <span class="hidden sm:inline-flex sm:ms-2">Info</span>
+                </p>
+              </span>
             </li>
-            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="me-2">2</span>
-                    Contact
-                </span>
+            <li
+              class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <span class="me-2">2</span>
+                Contact
+              </span>
             </li>
-            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="me-2">3</span>
-                    Education 
-                </span>
+            <li
+              class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <span class="me-2">3</span>
+                Education
+              </span>
             </li>
-            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="me-2">4</span>
-                    Experience
-                </span>
+            <li
+              class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <span class="me-2">4</span>
+                Experience
+              </span>
             </li>
-            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="me-2">5</span>
-                    Skills
-                </span>
+            <li
+              class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <span class="me-2">5</span>
+                Skills
+              </span>
             </li>
-            <li class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700">
-                <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-                    <span class="me-2">6</span>
-                    Summary
-                </span>
+            <li
+              class="flex items-center after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-2 md:after:mx-4 xl:after:mx-6 dark:after:border-gray-700"
+            >
+              <span
+                class="flex items-center after:content-['/'] sm:after:hidden after:mx-1 md:after:mx-2 after:text-gray-200 dark:after:text-gray-500"
+              >
+                <span class="me-2">6</span>
+                Summary
+              </span>
             </li>
             <li class="flex items-center">
-                <span class="me-2">7</span>
-                Languages
+              <span class="me-2">7</span>
+              Languages
             </li>
           </ol>
-          
-
         </div>
 
         <form id="resume-form" class="flex flex-col">
@@ -177,7 +223,7 @@
                   type="text"
                   id="first-name"
                   placeholder="First Name"
-                  class=" border  text-sm rounded-lg  block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                  class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
                 />
                 <span class="error-message"></span>
               </div>
@@ -187,12 +233,12 @@
                   class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                   >Last Name</label
                 >
-                <input type="text" id="last-name" placeholder="Last Name"
-                class=" border  text-sm
-                rounded-lg block
-                w-full p-2.5 bg-gray-700 border-gray-600
-                placeholder-gray-400 text-white
-                focus:ring-blue-500 focus:border-blue-500">
+                <input
+                  type="text"
+                  id="last-name"
+                  placeholder="Last Name"
+                  class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                />
                 <span class="error-message"></span>
               </div>
             </div>
@@ -218,12 +264,10 @@
                 for="file-input"
                 >Upload file</label
               >
-              <input class=" border
-              text-sm rounded-lg block
-              w-full p-2.5 bg-gray-700 border-gray-600
-              placeholder-gray-400 text-white focus:ring-blue-500
-              focus:border-blue-500"" aria-describedby="file_input_help"
-              id="file-input" type="file" />
+              <input class=" border text-sm rounded-lg block w-full p-2.5
+              bg-gray-700 border-gray-600 placeholder-gray-400 text-white
+              focus:ring-blue-500 focus:border-blue-500""
+              aria-describedby="file_input_help" id="file-input" type="file" />
               <p
                 class="mt-1 text-sm text-gray-500 dark:text-gray-300"
                 id="file_input_help"
@@ -250,7 +294,7 @@
                 type="text"
                 id="phone-number"
                 placeholder="0xxxxxxx"
-                class=" border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
+                class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
               />
               <span class="error-message"></span>
             </div>
@@ -451,7 +495,7 @@
                   id="start-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-              <span class="error-message"></span>
+                <span class="error-message"></span>
               </div>
               <div id="end" class="flex-1">
                 <label
@@ -464,7 +508,7 @@
                   id="end-exp-date-input"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 />
-              <span class="error-message"></span>
+                <span class="error-message"></span>
               </div>
             </div>
             <div>
@@ -514,7 +558,7 @@
                 placeholder="eg. HTML, CSS ..."
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               />
-            <span class="error-message"></span>
+              <span class="error-message"></span>
             </div>
             <button
               type="button"
@@ -596,73 +640,71 @@
           <div class="form-step hidden">
             <h2 class="text-white text-center">Choose a template</h2>
             <label for="choice1">1</label>
-            <input type="radio" name="resume" id="choice1">
+            <input type="radio" name="resume" id="choice1" />
             <label for="choice2">2</label>
-            <input type="radio" name="resume" id="choice2">
+            <input type="radio" name="resume" id="choice2" />
           </div>
 
-          
-      <div class="form-step hidden bg-gray-900 font-sans">
-        <div id="get-Form" style="padding: 20px; background-color: white; width: 100%;"  class="container mx-auto py-8 px-4 w-9/12">
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-            <h1 id="resume-name" class="text-3xl font-semibold">
-            
-              John Doe
-            </h1>
-            <p id="resume-post" class="text-gray-600">
-            
-              Full Stack Developer
-            </p>
-  
-            <hr class="my-4" />
-  
-            <h2 class="text-xl font-semibold mb-2">Summary</h2>
-            <p id="resume-summary" class="text-gray-700 flex" style="word-wrap:break-word; white-space: normal;">
-              
-            </p>
-  
-            <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
-            <ul id="resume-skills" class="list-disc list-inside text-gray-700">
+          <div id="get-Form" class="form-step hidden bg-gray-900 font-sans">
+            <div
+              style="padding: 20px; background-color: white; width: 100%"
+              class="container mx-auto py-8 px-4 w-9/12"
+            >
+              <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h1 id="resume-name" class="text-3xl font-semibold">
+                  John Doe
+                </h1>
+                <p id="resume-post" class="text-gray-600">
+                  Full Stack Developer
+                </p>
 
-            </ul>
-  
-            <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
-            <div id="resume-exp" class="mb-4">
-          
-            </div>
-  
-  
-  
-            <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
-            <div id="resume-education" class="mb-4">
-              
-              
-            </div>
-  
-            <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
-            <ul id="resume-contact" class="list-disc list-inside text-gray-700">
-            
-              <li>Email: john.doe@example.com</li>
-              <li>
-                LinkedIn:
-                <a
-                  href="https://www.linkedin.com/in/johndoe"
-                  class="text-blue-500 hover:underline"
-                  >linkedin.com/in/johndoe</a
+                <hr class="my-4" />
+
+                <h2 class="text-xl font-semibold mb-2">Summary</h2>
+                <p
+                  id="resume-summary"
+                  class="text-gray-700 flex"
+                  style="word-wrap: break-word; white-space: normal"
+                ></p>
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
+                <ul
+                  id="resume-skills"
+                  class="list-disc list-inside text-gray-700"
+                ></ul>
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
+                <div id="resume-exp" class="mb-4"></div>
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
+                <div id="resume-education" class="mb-4"></div>
+
+                <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
+                <ul
+                  id="resume-contact"
+                  class="list-disc list-inside text-gray-700"
                 >
-              </li>
-              <li>
-                Website:
-                <a
-                  href="https://www.johndoe.com"
-                  class="text-blue-500 hover:underline"
-                  >johndoe.com</a
-                >
-              </li>
-            </ul>
+                  <li>Email: john.doe@example.com</li>
+                  <li>
+                    LinkedIn:
+                    <a
+                      href="https://www.linkedin.com/in/johndoe"
+                      class="text-blue-500 hover:underline"
+                      >linkedin.com/in/johndoe</a
+                    >
+                  </li>
+                  <li>
+                    Website:
+                    <a
+                      href="https://www.johndoe.com"
+                      class="text-blue-500 hover:underline"
+                      >johndoe.com</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
           <div class="btns mt-5 flex justify-center items-center gap-4">
             <button
@@ -689,11 +731,8 @@
           </button>
         </form>
       </div>
-
-  
     </main>
 
-    
     <footer class="mt-20 bg-white dark:bg-gray-900">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
@@ -878,7 +917,7 @@
         </div>
       </div>
     </footer>
-  
+
     <script src="../assets/js/index.js"></script>
     <script src="../assets/js/dataValidation.js"></script>
     <script src="../assets/js/app.js"></script>
